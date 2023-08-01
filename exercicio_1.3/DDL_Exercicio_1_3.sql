@@ -1,0 +1,55 @@
+CREATE DATABASE Exercicio_1_3;
+
+USE Exercicio_1_3;
+
+CREATE TABLE Clinica
+(
+	IdClinica INT PRIMARY KEY IDENTITY,
+	NomeClinica VARCHAR(50)
+)
+CREATE TABLE TipoDePet
+(
+	IdTipoDePet INT PRIMARY KEY IDENTITY,
+	NomeTipoDePet VARCHAR (50)
+)
+CREATE TABLE Raca
+(
+	IdRaca INT PRIMARY KEY IDENTITY,
+	NomeRaca VARCHAR (30)
+)
+CREATE TABLE Dono
+(
+	IdDono INT PRIMARY KEY IDENTITY,
+	NomeDono VARCHAR (50)
+)
+CREATE TABLE Endereco
+(
+	IdEndereco INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
+	Rua VARCHAR(30),
+	Bairro VARCHAR(30),
+	Numero VARCHAR(30)
+)
+CREATE TABLE Veterinario
+(
+	IdVeterinario INT PRIMARY KEY IDENTITY,
+	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
+	NomeVeterinario VARCHAR(50)
+)
+CREATE TABLE Pets
+(
+	IdPets INT PRIMARY KEY IDENTITY,
+	IdTipoDePet INT FOREIGN KEY REFERENCES TipoDePet(IdTipoDePet),
+	IdDono INT FOREIGN KEY REFERENCES Dono(IdDono),
+	IdRaca INT FOREIGN KEY REFERENCES Raca(IdRaca),
+	NomePet VARCHAR(50),
+	DataDeNascimento VARCHAR(20)
+)
+
+CREATE TABLE Atendimento
+(
+	IdAtendimento INT PRIMARY KEY IDENTITY,
+	IdVeterinario INT FOREIGN KEY REFERENCES Veterinario(IdVeterinario),
+	IdPets INT FOREIGN KEY REFERENCES Pets(IdPets),
+	NumeroAtendimento VARCHAR(50)
+)
