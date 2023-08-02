@@ -30,5 +30,3 @@ SELECT * FROM Modelo
 SELECT * FROM Marca
 SELECT * FROM Veiculo
 SELECT * FROM Aluguel
-
-
