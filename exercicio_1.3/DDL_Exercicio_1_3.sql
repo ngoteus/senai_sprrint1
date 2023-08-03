@@ -34,7 +34,8 @@ CREATE TABLE Veterinario
 (
 	IdVeterinario INT PRIMARY KEY IDENTITY,
 	IdClinica INT FOREIGN KEY REFERENCES Clinica(IdClinica),
-	NomeVeterinario VARCHAR(50)
+	NomeVeterinario VARCHAR(50),
+	CRMV VARCHAR(20)
 )
 CREATE TABLE Pets
 (
