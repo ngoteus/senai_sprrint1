@@ -55,7 +55,8 @@ CREATE TABLE Consulta
 	IdMedico INT FOREIGN KEY REFERENCES Medico(IdMedico),
 	IdPaciente INT FOREIGN KEY REFERENCES Paciente(IdPaciente),
 	DataConsulta DATE,
-	HorarioConsulta DATETIME
+	HorarioConsulta DATETIME,
+	Prontuario VARCHAR (256)
 
 )
 CREATE TABLE Comentario
