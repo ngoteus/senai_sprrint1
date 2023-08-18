@@ -25,8 +25,9 @@ JOIN
 JOIN
 	Comentario ON Comentario.IdComentario = Comentario.IdComentario
 JOIN
-	Especialidade ON Medico.IdEspecialidade = Especialidade.IdEspecialidade
+	Especialidade ON Medico.IdEspecialidade = Especialidade.IdEspecialidade;
 	
+--DESAFIO 1
 
 	CREATE FUNCTION MedicoPorEspecialidade (@IDEspecialidade INT)
     RETURNS TABLE
@@ -42,6 +43,10 @@ JOIN
     );
 
 	SELECT * FROM MedicoPorEspecialidade(2);
+
+	
+	
+
 
 
 
